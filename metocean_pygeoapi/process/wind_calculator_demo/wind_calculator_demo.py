@@ -41,12 +41,12 @@ LOGGER = logging.getLogger(__name__)
 TODAY = datetime.today().strftime('%Y-%m-%d')
 TOMORROW = (datetime.now() + timedelta(1)).strftime('%Y-%m-%d')
 
-EDR_API_URL = 'https://data-api.mdl.nws.noaa.gov/EDR-API/collections/automated_gfs_100_forecast_time0_lat_0_lon_0_lv_ISBL5_Isobaric_surface_Pa/instance/00z/cube'  # noqa
+EDR_API_URL = 'http://localhost:5001/collections/automated_gfs_100_forecast_time0_lat_0_lon_0_lv_ISBL5_Isobaric_surface_Pa/instances/00z/cube'  # noqa
 
 #: Process metadata and description
 PROCESS_METADATA = {
     'version': '0.1.0',
-    'id': 'edr-wind-calculator-demo',
+    'id': 'wind-calculator-demo',
     'title': 'Wind speed and direction calculator demo',
     'description': 'Wind speed and direction calculator demo',
     'keywords': ['edr', 'wind speed', 'wind direction', 'calculator'],
@@ -98,7 +98,7 @@ PROCESS_METADATA = {
         'maxOccurs': 1
     }],
     'outputs': [{
-        'id': 'edr-wind-calculator-demo-response',
+        'id': 'wind-calculator-demo-response',
         'title': 'EDR wind calculator demo output',
         'output': {
             'formats': [{
