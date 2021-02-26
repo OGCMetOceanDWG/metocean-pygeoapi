@@ -79,9 +79,9 @@ setup(
         'water'
     ]),
     author='OGC Meteorology and Oceanography Domain Working Group',
-    author_email='meteo.dwg@lists.opengeospatial.org',
+    author_email='meteo.dwg@lists.ogc.org',
     maintainer='OGC Meteorology and Oceanography Domain Working Group',
-    maintainer_email='meteo.dwg@lists.opengeospatial.org',
+    maintainer_email='meteo.dwg@lists.ogc.org',
     url='https://github.com/OGCMetOceanDWG/metocean-pygeoapi',
     install_requires=read('requirements.txt').splitlines(),
     packages=find_packages(),
