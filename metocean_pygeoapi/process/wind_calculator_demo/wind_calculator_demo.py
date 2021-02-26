@@ -41,7 +41,7 @@ LOGGER = logging.getLogger(__name__)
 TODAY = datetime.today().strftime('%Y-%m-%d')
 TOMORROW = (datetime.now() + timedelta(1)).strftime('%Y-%m-%d')
 
-EDR_API_URL = 'http://localhost:5001/collections/automated_gfs_100_forecast_time0_lat_0_lon_0_lv_ISBL5_Isobaric_surface_Pa/instances/00z/cube'  # noqa
+EDR_API_URL = 'https://data-api.mdl.nws.noaa.gov/EDR-API/collections/automated_gfs_100_forecast_time0_lat_0_lon_0_lv_ISBL5_Isobaric_surface_Pa/instances/00z/cube'  # noqa
 
 #: Process metadata and description
 PROCESS_METADATA = {
