@@ -36,7 +36,7 @@ wind-calculator-demo:
 ## Integration
 
 ```bash
-pygeoapi generate-openapi-document -c $PYGEOAPI_CONFIG > $PYGEOAPI_OPENAPI
+pygeoapi openapi generate -c $PYGEOAPI_CONFIG > $PYGEOAPI_OPENAPI
 ```
 
 ## Running
