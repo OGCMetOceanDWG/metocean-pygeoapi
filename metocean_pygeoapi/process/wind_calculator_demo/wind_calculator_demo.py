@@ -57,69 +57,48 @@ PROCESS_METADATA = {
         'href': 'https://disc.gsfc.nasa.gov/information/data-in-action?title=Derive%20Wind%20Speed%20and%20Direction%20With%20MERRA-2%20Wind%20Components',  # noqa
         'hreflang': 'en-US'
     }],
-    'inputs': [{
-        'id': 'wkt',
-        'title': 'OGC Well-known text',
-        'input': {
-            'literalDataDomain': {
-                'dataType': 'string',
-                'valueDefinition': {
-                    'anyValue': True
-                }
-            }
+    'inputs': {
+        'wkt': {
+            'title': 'OGC Well-known text',
+            'schema': {
+                'type': 'string'
+            },
+            'minOccurs': 1,
+            'maxOccurs': 1
         },
-        'minOccurs': 1,
-        'maxOccurs': 1
-    }, {
-        'id': 'datetime',
-        'title': 'datetime (RFC3339)',
-        'input': {
-            'literalDataDomain': {
-                'dataType': 'string',
-                'valueDefinition': {
-                    'anyValue': True
-                }
-            }
+        'datetime': {
+            'title': 'datetime (RFC3339)',
+            'schema': {
+                'type': 'string',
+                'format': 'date-time'
+            },
+            'minOccurs': 1,
+            'maxOccurs': 1
         },
-        'minOccurs': 1,
-        'maxOccurs': 1
-    }, {
-        'id': 'z',
-        'title': 'z',
-        'input': {
-            'literalDataDomain': {
-                'dataType': 'float',
-                'valueDefinition': {
-                    'anyValue': True
-                }
-            }
-        },
-        'minOccurs': 1,
-        'maxOccurs': 1
-    }],
-    'outputs': [{
-        'id': 'edr-wind-calculator-demo-response',
-        'title': 'EDR wind calculator demo output',
-        'output': {
-            'formats': [{
-                'mimeType': 'application/json'
-            }]
+        'z': {
+            'title': 'z',
+            'schema': {
+                'type': 'number',
+            },
+            'minOccurs': 1,
+            'maxOccurs': 1
         }
-    }],
+    },
+    'outputs': {
+        'edr-wind-calculator-demo-response': {
+            'title': 'EDR wind calculator demo output',
+            'schema': {
+                'type': 'object',
+                'contentEncodingType': 'application/json'
+            }
+        }
+    },
     'example': {
-        'inputs': [{
-            'id': 'wkt',
-            'value': 'POLYGON((-120.504906 36.031332,-120.504906 46.980252,-83.692291 46.980252,-83.692291 36.031332,-120.504906 36.031332))',  # noqa
-            'type': 'text/plain'
-        }, {
-            'id': 'datetime',
-            'value': f'{TODAY}T00:00:00/{TOMORROW}T21:00:00',
-            'type': 'text/plain'
-        }, {
-            'id': 'z',
-            'value': '50000.0',
-            'type': 'text/plain'
-        }]
+        'inputs': {
+            'wkt': 'POLYGON((-120.504906 36.031332,-120.504906 46.980252,-83.692291 46.980252,-83.692291 36.031332,-120.504906 36.031332))',  # noqa
+            'datetime': f'{TODAY}T00:00:00/{TOMORROW}T21:00:00',
+            'z': '50000.0'
+        }
     }
 }
 
